@@ -108,7 +108,5 @@ app.controller('galleryCtrl', ($scope, $firebaseArray, $firebaseObject, $firebas
 
 }); // end ctrl
 
-// My1FreeLanceJob
-// My1OutSourceJob
 
 })();
