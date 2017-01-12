@@ -1,0 +1,18 @@
+{
+  "name": "lisanaphoto-portfolio",
+  "version": "1.0.0",
+  "description": "A online portfolio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "M. Dunson",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "nodemailer": "^2.7.0",
+    "nodemon": "^1.11.0"
+  }
+}

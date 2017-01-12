@@ -1,0 +1,35 @@
+<div ng-controller="galleryCtrl">
+	<div class="container" id="box">
+		<h1 class="front"> Photo Collection </h1>
+		<div id="wrap">
+			<h4>Step 1: Select a photo category</h4>
+			Family:
+			<input class="check"type="checkbox" name="name" id="famCk">
+			Urban:
+			<input class="check"type="checkbox" name="name" id="urbCk">
+			Travel:
+			<input class="check"type="checkbox" name="name" id="travCk">
+			<br><br>
+			<h4>Step 2: Select a photo</h4>
+			<input type="file" onchange="showUpBtn()"><br>
+			<h4 id="step2">Step 3: Upload to collection</h4>
+			<button type="button" name="button" id="upBtn" ng-click="previewFile()">Upload Image</button>
+			<br><br>
+			<img src="" height="200" alt="Image preview..." ng-model="img"style="">
+
+
+			<br><br><br>
+
+
+				<button ng-repeat="photo in photos"type="button" name="button" onclick="removeImg()" ng-click="photos.$remove(photo)">Remove Image</button>
+		</div>
+	</div>
+
+	<div ng-repeat="pic in photos">
+		<img src="{{pic.imageURL}}" alt="" />
+
+	</div>
+
+
+
+</div>

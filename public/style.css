@@ -1,0 +1,22 @@
+body {
+  padding-top: 3em;
+  font-family: 'ariel';
+  padding-top: 3.5em;
+  background-image: url('assets/Darkside-01.jpg');
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-color: #000;
+  color:#ddd;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  line-height: 55px:
+}
+
+input[type=checkbox] {
+  margin: auto 10px auto 0;
+}
