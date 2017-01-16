@@ -9,7 +9,7 @@
  }; // end
 
  firebase.initializeApp(config);
- const app = angular.module('lPhoto', ['firebase', 'ui.router']);
+ const app = angular.module('lPhoto', ['firebase', 'ui.router', 'ngAnimate' ]);
 
 // Routing Config
  app.config(Config);
@@ -23,23 +23,81 @@
    }).state("Contact", {
      url: "/contact",
      templateUrl: "views/contact.html"
+   }).state("FamilyImg", {
+     url: "/family_collection",
+     templateUrl: "views/FamilyCollection2.html"
+   }).state("TravelImg", {
+     url: "/travel_collection",
+     templateUrl: "views/TravelCollection.html"
+   }).state("UrbanImg", {
+     url: "/urban_collection",
+     templateUrl: "views/UrbanCollection.html"
    });
    $urlRouterProvider.otherwise("/")
  } // end
+app.factory('DataSource', ['$http',function($http){
+       return {
+           get: function(fileName,callback){
+                $http.get(fileName).
+                success(function(data, status) {
+                    callback(data);
+                });
+           }
+       };
+    }]);
+
+app.controller('galleryCtrl', ($scope, $state, $firebaseArray, $firebaseObject, $firebaseAuth, DataSource) => {
 
 
-app.controller('galleryCtrl', ($scope, $firebaseArray, $firebaseObject, $firebaseAuth) => {
 
    //  Get reference to DB
+   let exVac;
    const ref = firebase.database().ref();
    const famImgRef = ref.child('familyImages');
    const travImgRef = ref.child('travelImages');
    const urbImgRef = ref.child('urbanImages');
+   const logRef = ref.child('Auth');
+   const coin = 'blowF1$hPQz19f';
+   const fbtn = document.getElementById('fam-card');
    $scope.photos = $firebaseArray(famImgRef);
    $scope.travPhotos = $firebaseArray(travImgRef);
    $scope.urbPhotos = $firebaseArray(urbImgRef);
+   $scope.owner = $firebaseArray(logRef);
+  const b = $("#click");
+  console.log(b)
+  exVac = coin;
+  console.log(exVac);
+  var dBTN = $(".t2");
+   var form = $("#wrap");
+  dBTN.hide();
+  form.hide();
+  firebase.auth().signInAnonymously().then(function() {
+    firebase.auth().onAuthStateChanged(function(user) {
+     if (user) {
+       b.on("click", function (){
+         var authIn = prompt('enter code');
+         if (authIn === exVac)
+           form.show();
+           dBTN.show();
+           const email = 'lp@gmail.com';
+           const password = 'testtest';
+           firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+             // Handle Errors here.
+             var errorCode = error.code;
+             var errorMessage = error.message;
+             if (Notification.permission === "granted") {
+             // If it's okay let's create a notification
+             var notification = new Notification("No user found with the entered credentials.");
+             }
+             console.log(errorCode);
+             // a/lert(errorMessage);
+           });
 
-   // Saving & previewing img
+       })
+    }
+  });
+});
+
    $scope.previewFile = () => {
      const preview = document.querySelector('img'); //selects the query named img
      const file    = document.querySelector('input[type=file]').files[0]; //sames as here
@@ -73,6 +131,7 @@ app.controller('galleryCtrl', ($scope, $firebaseArray, $firebaseObject, $firebas
 
          $("#box").css("background", "white");
          $("#upBtn").fadeOut();
+        //  window.location.reload();
      } // end
 
      // Display of img
@@ -81,6 +140,22 @@ app.controller('galleryCtrl', ($scope, $firebaseArray, $firebaseObject, $firebas
    firebase.auth().signInAnonymously().then(function() {
      firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
+        // var dBTN = $(".t2");
+        //  var form = $("#wrap");
+        //  dBTN.hide();
+        //  form.hide();
+        //
+        // b.on("click", function (){
+        //
+        // })
+
+
+        //paste this code under the head tag or in a separate js file.
+      	// Wait for window load
+      	$(window).load(function() {
+      		// Animate loader off screen
+      		$(".se-pre-con").fadeOut("slow");;
+      	});
         // User is signed in.
         var isAnonymous = user.isAnonymous;
         var uid = user.uid;
@@ -101,9 +176,53 @@ app.controller('galleryCtrl', ($scope, $firebaseArray, $firebaseObject, $firebas
 
   });
 
-
-
   }; // end preview
+
+
+
+  // initial image index
+$scope._Index = 0;
+// if a current image is the same as requested image
+$scope.isActive = function (index) {
+return $scope._Index === index;
+};
+
+// show prev image
+$scope.showPrev = function () {
+$scope._Index = ($scope._Index > 0) ? --$scope._Index : $scope.photos.length - 1;
+};
+$scope.showTPrev = function () {
+$scope._Index = ($scope._Index > 0) ? --$scope._Index : $scope.travPhotos.length - 1;
+};
+$scope.showUPrev = function () {
+$scope._Index = ($scope._Index > 0) ? --$scope._Index : $scope.urbPhotos.length - 1;
+};
+
+// show next image
+$scope.showNext = function () {
+$scope._Index = ($scope._Index < $scope.photos.length - 1) ? ++$scope._Index : 0;
+};
+// show next image
+$scope.showTNext = function () {
+$scope._Index = ($scope._Index < $scope.travPhotos.length - 1) ? ++$scope._Index : 0;
+};
+// show next image
+$scope.showUNext = function () {
+$scope._Index = ($scope._Index < $scope.urbPhotos.length - 1) ? ++$scope._Index : 0;
+};
+
+// show a certain image
+$scope.showPhoto = function (index) {
+$scope._Index = index;
+};
+// show a certain image
+$scope.showTPhoto = function (index) {
+$scope._Index = index;
+};
+// show a certain image
+$scope.showUPhoto = function (index) {
+$scope._Index = index;
+};
 
 
 }); // end ctrl

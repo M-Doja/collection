@@ -1,0 +1,56 @@
+<div ng-controller="galleryCtrl">
+  <h1 class="text-center">Family Collection</h1>
+
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <button class="gallBtn" id="TbtnCall" ui-sref='TravelImg'>
+        <h3>Travel Collection</h3>
+      </button>
+    </div>
+  </div>
+
+  <div class="row text-center">
+    <div class="col-md-9">
+      <div ng-repeat="image in photos | filter:categories" class="albumImage">
+        <img  class="mySlides" src="{{image.imageURL}}" alt="{{currentImage.description}}"/>
+      </div>
+
+      <div class="w3-content w3-display-container text-center">
+        <img  class="mySlides" src="{{image.imageURL}}" alt="{{currentImage.description}}"/>
+        <a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1)">&#10094;</a>
+        <a class="w3-btn-floating w3-display-right" onclick="plusDivs(1)">&#10095;</a>
+      </div>
+
+      <script>
+      var slideIndex = 1;
+      showDivs(slideIndex);
+
+      function plusDivs(n) {
+        showDivs(slideIndex += n);
+      }
+
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+           x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+      }
+      </script>
+    </div><!-- End of Column -->
+
+    <div class="col-md-3">
+      <div class="wrapper">
+        <ul class="list">
+          <li ng-repeat="image in photos | filter:categories" ng-click="setCurrentImage(image)">
+            <img ng-src="{{image.imageURL}}"/>
+          </li>
+        </ul><!-- End of List -->
+      </div> <!-- End of Wrapper -->
+    </div><!-- End of Column -->
+
+  </div><!-- End of Row -->
+</div>

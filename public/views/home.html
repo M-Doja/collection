@@ -1,11 +1,37 @@
 <div ng-controller="galleryCtrl">
-  <div class="container tex-center">
-    <h2 style="color:#ccc">Still working on this</h2>
+  <div class="container text-center main">
+    <h1 class="homeText"style="font-size:50px">Welcome to LisanaPhoto</h1>
+    <span class="homeText par" ui-sref="Gallery"><a href="#"><h3>Digital Portfolio</h3></a></span>
+
+
   </div>
 
 </div>
-<footer class="footer navbar-inverse"><div class="container">
+<!-- <div class="" ng-repeat="o in owner">
+  <h3 style="color:#fff;">{{o.authDetail}}Test</h3>
+</div> -->
+<div id="demo" class="collapse text-center">
+  <div id="wrap">
+    <h4>Step 1: Select a photo category</h4>
+    Family:
+    <input class="check"type="checkbox" name="name" id="famCk">
+    Urban:
+    <input class="check"type="checkbox" name="name" id="urbCk">
+    Travel:
+    <input class="check"type="checkbox" name="name" id="travCk">
+    <br><br>
+    <h4>Step 2: Select a photo</h4>
+    <input style="display:inline-block"type="file" ><br>
+    <h4 id="step2">Step 3: Upload to collection</h4>
+    <button type="button"  class="btn btn-primary"name="button" id="upBtn" ng-click="previewFile()">Upload Image</button>
+    <br><br>
+    <img src="" height="200" alt="Image preview..." ng-model="img"style="">
+  </div>
+</div>
+<footer class="footer navbar-inverse" style="cursor:">
+  <div class="container">
   <p class="text-center" style="color:#777;">
-    Developed by Dev Doja
+    Developed by Dev Doja <a style="color:#777;" id="click" data-toggle="collapse" data-target="#demo"><i class="fa fa-copyright" aria-hidden="true"></i></a> 2017
   </p>
+
 </div></footer>
