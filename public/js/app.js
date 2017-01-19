@@ -1,6 +1,4 @@
 (function (){
-'use strict';
-
 // Initialize Firebase
  var config = {
    apiKey: "AIzaSyCfn5JzmHOKZJUStYKNSo7xGnlLQDh0PGk",
@@ -187,16 +185,25 @@ $scope.isActive = function (index) {
 return $scope._Index === index;
 };
 
+
+
 // show prev image
 $scope.showPrev = function () {
 $scope._Index = ($scope._Index > 0) ? --$scope._Index : $scope.photos.length - 1;
 };
+
 $scope.showTPrev = function () {
 $scope._Index = ($scope._Index > 0) ? --$scope._Index : $scope.travPhotos.length - 1;
 };
+
 $scope.showUPrev = function () {
 $scope._Index = ($scope._Index > 0) ? --$scope._Index : $scope.urbPhotos.length - 1;
 };
+
+
+
+
+
 
 // show next image
 $scope.showNext = function () {
@@ -210,6 +217,9 @@ $scope._Index = ($scope._Index < $scope.travPhotos.length - 1) ? ++$scope._Index
 $scope.showUNext = function () {
 $scope._Index = ($scope._Index < $scope.urbPhotos.length - 1) ? ++$scope._Index : 0;
 };
+
+
+
 
 // show a certain image
 $scope.showPhoto = function (index) {

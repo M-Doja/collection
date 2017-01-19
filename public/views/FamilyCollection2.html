@@ -5,27 +5,34 @@
       <!-- slider container -->
       <!-- prev / next controls -->
       <div class="controls">
-        <a class="arrow prev" href="" ng-click="showPrev()"><i class="fa fa-angle-left" style="font-size:70px"></i>    </a>
-        <a class="arrow next" href="" ng-click="showNext()">    <i class="fa fa-angle-right" style="font-size:70px"></i></a>
+        <a class="arrow prev" href="" ng-click="showPrev()"><i class="fa fa-angle-left" style="font-size:70px"></i></a>
+        <a class="arrow next" href="" ng-click="showNext()"><i class="fa fa-angle-right" style="font-size:70px"></i></a>
       </div>
+
       <div class="container slider">
+
         <!-- enumerate all photos -->
         <img style='max-width:100%;height:auto;' ng-repeat="photo in photos" class="slide" ng-swipe-right="showPrev()" ng-swipe-left="showNext()" ng-show="isActive($index)" src="{{photo.imageURL}}" />
+
       </div>
 
-
     </div>
-    <div class="col-md-12 row3" style="overflow:scroll; height:300px;max-width:700px margin:auto">
-      <div class="">
-        <div class=""style="margin:5px auto;">
-          <ul class="text-center flex-container">
-            <li ng-repeat="image in photos" class="flex-item">
-              <div class="thumbwrapper" style="margin: 5px auto;">
-                <a ng-href="" ng-click="showPhoto($index)">
-                  <img class="thumb" ng-src="{{IMAGE_LOCATION+image.imageURL}}" />
-                </a>
+  </div>
+  <div id="loader"></div>
 
-              </div>
+
+  <div class="row">
+    <div class="container" style="max-width:700px;">
+
+      <!-- thumbs list -->
+      <div class="col-md-12 row3">
+        <div class="parent-wrapper"style="margin:5px auto;">
+
+          <ul class="flex-container wrap">
+            <li ng-repeat="image in photos" class="flex-item">
+              <a ng-href="" ng-click="showPhoto($index)">
+                <img class="thumb" ng-src="{{IMAGE_LOCATION+image.imageURL}}"/>
+              </a>
             </li>
           </ul>
 
@@ -33,14 +40,30 @@
       </div>
     </div>
   </div>
+  <script>
+    $(window).keyup(function (e) {
+      var key = e.which;
+      if(key == 13 || key == 39) { // the enter key code or right arrow
+        $('.next').click();
+        return false;
+      } else if(key == 37) { // left arrow
+        $('.prev').click();
+        return false;
+      }
+    });
+  </script>
+
+  <!-- Img Delete Button -->
   <div class="row">
     <div class="col-md-12">
       <div class="btnshell">
+
         <ul  class="t2 flex-container">
-        <li class="dBtn flex-item" ng-repeat="image in photos">
-          <button type="button" class='delBtn' name="button" onclick="removeImg()" ng-click="photos.$remove(image)">Remove <img class="btnPic"src="{{image.imageURL}}" height='60' alt="" /></button>
-        </li>
-      </ul>
+          <li class="dBtn flex-item" ng-repeat="image in photos">
+            <button type="button" class='delBtn' name="button" onclick="removeImg()" ng-click="photos.$remove(image)">Remove <img class="btnPic"src="{{image.imageURL}}" height='60' alt="" /></button>
+          </li>
+        </ul>
+
       </div>
     </div>
   </div>
