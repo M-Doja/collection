@@ -8,8 +8,8 @@
   padding: 0;
   margin: 0 auto;
   max-width:1000px;
+  height: 145px;
   list-style: none;
-  border: 1px solid silver;
   -ms-box-orient: horizontal;
   display: -webkit-box;
   display: -moz-box;
@@ -22,7 +22,7 @@
 }
 
 .flex-item {
-  background: tomato;
+  background: #333;
   padding: 5px;
   width: 100px;
   height: 100px;
@@ -98,6 +98,7 @@ ul{
   margin: 3px auto 25px;
   max-width: 85px;
   max-height: 85px;
+  border: 2px #fff solid;
 }
 
 
@@ -110,4 +111,5 @@ ul{
     overflow:scroll;
     height:150px;
     overflow-x: hidden;
+    border: 1px solid silver;
 }
