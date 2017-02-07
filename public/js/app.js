@@ -30,6 +30,9 @@
    }).state("UrbanImg", {
      url: "/urban_collection",
      templateUrl: "views/UrbanCollection.html"
+   }).state("upload", {
+     url: "/auth_upload",
+     templateUrl: "views/Upload.html"
    });
    $urlRouterProvider.otherwise("/")
  } // end
@@ -46,55 +49,49 @@ app.factory('DataSource', ['$http',function($http){
 
 app.controller('galleryCtrl', ($scope, $state, $firebaseArray, $firebaseObject, $firebaseAuth, DataSource) => {
 
-
-
    //  Get reference to DB
-   let exVac;
    const ref = firebase.database().ref();
    const famImgRef = ref.child('familyImages');
    const travImgRef = ref.child('travelImages');
    const urbImgRef = ref.child('urbanImages');
-   const logRef = ref.child('Auth');
-   const coin = 'blowF1$hPQz19f';
+   const adminRef = ref.child('Admin/');
+   const adminKey = adminRef.push();
    const fbtn = document.getElementById('fam-card');
    $scope.photos = $firebaseArray(famImgRef);
    $scope.travPhotos = $firebaseArray(travImgRef);
    $scope.urbPhotos = $firebaseArray(urbImgRef);
-   $scope.owner = $firebaseArray(logRef);
-  const b = $("#click");
-  console.log(b)
-  exVac = coin;
-  console.log(exVac);
-  var dBTN = $(".t2");
+   $scope.Admin = $firebaseArray(adminRef);
+   const x = $(".click");
+   console.log(x)
+   var dBTN = $(".t2");
    var form = $("#wrap");
-  dBTN.hide();
-  form.hide();
-  firebase.auth().signInAnonymously().then(function() {
-    firebase.auth().onAuthStateChanged(function(user) {
-     if (user) {
-       b.on("click", function (){
-         var authIn = prompt('enter code');
-         if (authIn === exVac)
-           form.show();
-           dBTN.show();
-           const email = 'lp@gmail.com';
-           const password = 'testtest';
-           firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-             // Handle Errors here.
-             var errorCode = error.code;
-             var errorMessage = error.message;
-             if (Notification.permission === "granted") {
-             // If it's okay let's create a notification
-             var notification = new Notification("No user found with the entered credentials.");
-             }
-             console.log(errorCode);
-             // a/lert(errorMessage);
-           });
+   dBTN.hide();
+   form.hide();
+   firebase.auth().signInAnonymously().then(function() {
+     firebase.auth().onAuthStateChanged(function(user) {
+       $scope.Admin = $firebaseArray(adminRef);
+      if (user) {
 
-       })
-    }
-  });
-});
+      localStorage.setItem('token', '02Fy2oi712LI6p23wEy13125');
+      // localStorage.removeItem('');
+       x.on("click", function (){
+         const tar = localStorage.getItem('token');
+         var q = prompt("whoooooooo r u?")
+         console.log(tar);
+         console.log(q);
+         if (tar === q) {
+          dBTN.show();
+          form.show();
+          alert('true')
+         }else {
+          alert('false')
+         }
+       });
+
+
+     }
+   });
+ });
 
    $scope.previewFile = () => {
      const preview = document.querySelector('img'); //selects the query named img
@@ -138,16 +135,6 @@ app.controller('galleryCtrl', ($scope, $state, $firebaseArray, $firebaseObject, 
    firebase.auth().signInAnonymously().then(function() {
      firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        // var dBTN = $(".t2");
-        //  var form = $("#wrap");
-        //  dBTN.hide();
-        //  form.hide();
-        //
-        // b.on("click", function (){
-        //
-        // })
-
-
         //paste this code under the head tag or in a separate js file.
       	// Wait for window load
       	$(window).load(function() {

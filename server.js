@@ -1,9 +1,7 @@
 'use strict';
-
 const cfg = require('./config.js');
 const express = require('express');
 const app = express();
-const nodeMailer = require('nodemailer');
 const router = express.Router();
 const bodyParser = require('body-parser');
 

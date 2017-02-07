@@ -1,6 +1,6 @@
 <div ng-controller="galleryCtrl">
 	<div class="container" id="box">
-		<!-- <div id="wrap">
+		<div id="wrap">
 			<h4>Step 1: Select a photo category</h4>
 			Family:
 			<input class="check"type="checkbox" name="name" id="famCk">
@@ -15,19 +15,23 @@
 			<button type="button" name="button" id="upBtn" ng-click="previewFile()">Upload Image</button>
 			<br><br>
 			<img src="" height="200" alt="Image preview..." ng-model="img"style="">
-		</div> -->
+		</div>
 
 			<br><br><br>
 
+			</div>
 			<div class="card-holder par" style="font-family:arial black">
-				<a class="card"id="FbtnCall" ui-sref='FamilyImg'>
-					<h3>Family Collection</h3>
-					<img class="card-pic"src="{{photos[27].imageURL}}" alt="" width='200' />
-				</a>
 				<a class="card" id="TbtnCall" ui-sref='TravelImg'>
 					<h3>Travel Collection</h3>
 					<img class="card-pic"src="{{travPhotos[6].imageURL}}" alt="" width='200' />
 				</a>
+
+				<a class="card"id="FbtnCall" ui-sref='FamilyImg'>
+					<h3>Family Collection</h3>
+					<!-- <img class="pix" src="https://firebasestorage.googleapis.com/v0/b/lisanaphotodb.appspot.com/o/Family%2F4_3.jpg?alt=media&amp;token=2ba9cd8c-fbfc-408f-98bd-649782eaace6" width="300" height="200"> -->
+					<img class="card-pic"src="https://firebasestorage.googleapis.com/v0/b/lisanaphotodb.appspot.com/o/Family%2F4_3.jpg?alt=media&amp;token=2ba9cd8c-fbfc-408f-98bd-649782eaace6" alt="" width='200' />
+				</a>
+
 				<a class="card" id="UbtnCall" ui-sref='UrbanImg'>
 					<h3>Urban Collection</h3>
 					<img class="card-pic"src="{{urbPhotos[2].imageURL}}" alt="" width='200' />
