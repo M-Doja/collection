@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="lPhoto">
+<html ng-app="lPhoto" >
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,18 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="gallery.css">
     <script>
-      $(window).keyup(function(e){var key = e.which;if(key == 13 || key == 39){$('.next').click();return false;}else if(key == 37) { $('.prev').click();return false;}});
+      // if ('serviceWorker' in navigator) {
+      //   window.addEventListener('load', function() {
+      //     navigator.serviceWorker.register('sw.js').then(function(registration) {
+      //       // Registration was successful
+      //       console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      //     }).catch(function(err) {
+      //       // registration failed :(
+      //       console.log('ServiceWorker registration failed: ', err);
+      //     });
+      //   });
+      // }
+      // $(window).keyup(function(e){var key = e.which;if(key == 13 || key == 39){$('.next').click();return false;}else if(key == 37) { $('.prev').click();return false;}});
     </script>
   </head>
   <body class="container-fluid">
@@ -68,13 +79,16 @@
 
 
 
-
+    <p><img src="" width="450"class="targetImage" alt=""></p>
 
 
     <ui-view></ui-view>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      $(window).keyup(function(e){var key = e.which;if(key == 13 || key == 39){$('.next').click();return false;}else if(key == 37) { $('.prev').click();return false;}});
+    </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
@@ -88,5 +102,6 @@
     <script src="https://cdn.firebase.com/libs/angularfire/2.2.0/angularfire.min.js"></script>
     <!-- <script src="https://pawelgrzybek.com/siema/dist/siema.min.js" charset="utf-8"></script> -->
     <script src="js/app.js" ></script>
+    <script src="js/siema.min.js" ></script>
   </body>
 </html>

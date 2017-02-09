@@ -62,11 +62,11 @@ app.controller('galleryCtrl', ($scope, $state, $firebaseArray, $firebaseObject, 
    $scope.urbPhotos = $firebaseArray(urbImgRef);
    $scope.Admin = $firebaseArray(adminRef);
    const x = $(".click");
-   console.log(x)
+  //  console.log(x)
    var dBTN = $(".t2");
    var form = $("#wrap");
-   dBTN.hide();
-   form.hide();
+  //  dBTN.hide();
+  //  form.hide();
    firebase.auth().signInAnonymously().then(function() {
      firebase.auth().onAuthStateChanged(function(user) {
        $scope.Admin = $firebaseArray(adminRef);
@@ -169,7 +169,7 @@ app.controller('galleryCtrl', ($scope, $state, $firebaseArray, $firebaseObject, 
 $scope._Index = 0;
 // if a current image is the same as requested image
 $scope.isActive = function (index) {
-return $scope._Index === index;
+  return $scope._Index === index;
 };
 
 
@@ -184,7 +184,7 @@ $scope._Index = ($scope._Index > 0) ? --$scope._Index : $scope.travPhotos.length
 };
 
 $scope.showUPrev = function () {
-$scope._Index = ($scope._Index > 0) ? --$scope._Index : $scope.urbPhotos.length - 1;
+  $scope._Index = ($scope._Index > 0) ? --$scope._Index : $scope.urbPhotos.length - 1;
 };
 
 
@@ -194,15 +194,15 @@ $scope._Index = ($scope._Index > 0) ? --$scope._Index : $scope.urbPhotos.length 
 
 // show next image
 $scope.showNext = function () {
-$scope._Index = ($scope._Index < $scope.photos.length - 1) ? ++$scope._Index : 0;
+  $scope._Index = ($scope._Index < $scope.photos.length - 1) ? ++$scope._Index : 0;
 };
 // show next image
 $scope.showTNext = function () {
-$scope._Index = ($scope._Index < $scope.travPhotos.length - 1) ? ++$scope._Index : 0;
+  $scope._Index = ($scope._Index < $scope.travPhotos.length - 1) ? ++$scope._Index : 0;
 };
 // show next image
 $scope.showUNext = function () {
-$scope._Index = ($scope._Index < $scope.urbPhotos.length - 1) ? ++$scope._Index : 0;
+  $scope._Index = ($scope._Index < $scope.urbPhotos.length - 1) ? ++$scope._Index : 0;
 };
 
 
@@ -210,15 +210,15 @@ $scope._Index = ($scope._Index < $scope.urbPhotos.length - 1) ? ++$scope._Index 
 
 // show a certain image
 $scope.showPhoto = function (index) {
-$scope._Index = index;
+  $scope._Index = index;
 };
 // show a certain image
 $scope.showTPhoto = function (index) {
-$scope._Index = index;
+  $scope._Index = index;
 };
 // show a certain image
 $scope.showUPhoto = function (index) {
-$scope._Index = index;
+  $scope._Index = index;
 };
 
 

@@ -4,13 +4,16 @@
     <div class="row">
       <div class="col-md-6">
         <!--  -->
+        <div id="loader" style="margin-top:5px;">
+
+        </div>
         <div class="controls text-center">
-          <a class="arrow prev" href="" ng-click="showPrev()"><i class="fa fa-angle-left" style="font-size:70px"></i></a>
-          <a class="arrow next" href="" ng-click="showNext()"><i class="fa fa-angle-right" style="font-size:70px"></i></a>
+          <a class="arrow prev" href="" ng-click="showUPrev()"><i class="fa fa-angle-left" style="font-size:70px"></i></a>
+          <a class="arrow next" href="" ng-click="showUNext()"><i class="fa fa-angle-right" style="font-size:70px"></i></a>
         </div>
         <div class=" text-center">
           <!-- enumerate all photos -->
-          <img style='max-width:100%;' ng-repeat="photo in urbPhotos" class="imG" ng-swipe-right="showPrev()" ng-swipe-left="showNext()" ng-show="isActive($index)" src="{{photo.imageURL}}" />
+          <img style='max-width:100%;' ng-repeat="photo in urbPhotos" class="imG" ng-swipe-right="showUPrev()" ng-swipe-left="showUNext()" ng-show="isActive($index)" src="{{photo.imageURL}}" />
         </div>
       </div>
       <div class="col-md-6 row3">
