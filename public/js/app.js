@@ -61,22 +61,22 @@ app.controller('galleryCtrl', ($scope, $state, $firebaseArray, $firebaseObject, 
    $scope.travPhotos = $firebaseArray(travImgRef);
    $scope.urbPhotos = $firebaseArray(urbImgRef);
    $scope.Admin = $firebaseArray(adminRef);
-   const x = $(".click");
+   const x = $("#click");
   //  console.log(x)
    var dBTN = $(".t2");
    var form = $("#wrap");
-  //  dBTN.hide();
-  //  form.hide();
+   dBTN.hide();
+   form.hide();
    firebase.auth().signInAnonymously().then(function() {
      firebase.auth().onAuthStateChanged(function(user) {
        $scope.Admin = $firebaseArray(adminRef);
       if (user) {
 
-      localStorage.setItem('token', '02Fy2oi712LI6p23wEy13125');
+      localStorage.setItem('token', 'photobomb');
       // localStorage.removeItem('');
        x.on("click", function (){
          const tar = localStorage.getItem('token');
-         var q = prompt("whoooooooo r u?")
+         var q = prompt("Enter auth email")
          console.log(tar);
          console.log(q);
          if (tar === q) {
@@ -126,7 +126,6 @@ app.controller('galleryCtrl', ($scope, $state, $firebaseArray, $firebaseObject, 
 
          $("#box").css("background", "white");
          $("#upBtn").fadeOut();
-        //  window.location.reload();
      } // end
 
      // Display of img
