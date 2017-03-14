@@ -20,9 +20,12 @@
         <div class="parent-wrapper">
           <ul class="flex-container wrap">
             <li ng-repeat="image in travPhotos" class="flex-item">
-              <a ng-href="" ng-click="showPhoto($index)">
-                <img class="thumb" ng-src="{{IMAGE_LOCATION+image.imageURL}}"/>
-              </a>
+              <div class="fill" style="width:100px; height:100px">
+                <!-- <a ng-href="" ng-click="showPhoto($index)"> -->
+                  <img class="" ng-click="showPhoto($index)" ng-src="{{IMAGE_LOCATION+image.imageURL}}"/>
+                <!-- </a> -->
+              </div>
+
             </li>
           </ul>
         </div>

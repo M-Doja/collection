@@ -101,12 +101,29 @@ ul{
     white-space:nowrap;
 }
 
-.thumb {
+/*.thumb {
   margin: 3px auto 25px;
   max-width: 85px;
   max-height: 85px;
   border: 2px #fff solid;
+  object-fit: cover;
+}*/
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
 }
+.fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
+
+.im {
+  height: 20%;
+}
+
 
 .imG {
   max-height: 600px;

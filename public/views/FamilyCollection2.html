@@ -23,9 +23,13 @@
         <div class="parent-wrapper">
           <ul class="flex-container wrap">
             <li ng-repeat="image in photos" class="flex-item">
-              <a ng-href="" ng-click="showPhoto($index)">
-                <img class="thumb" ng-src="{{IMAGE_LOCATION+image.imageURL}}"/>
-              </a>
+
+                <a href="">
+                  <div class="fill" style="width:100px; height:100px">
+                    <img class="im" ng-click="showPhoto($index)" ng-src="{{IMAGE_LOCATION+image.imageURL}}"/>
+                  </div>
+                </a>
+
             </li>
           </ul>
         </div>
