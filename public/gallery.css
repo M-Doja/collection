@@ -57,10 +57,21 @@
   padding-left: 50px;
   padding-right: 50px;
   text-decoration: none;
+  /*display: inline-block;*/
+  /*margin-top: 100px;*/
 }
 .parent-wrapper{
   margin-top:3em;
 }
+
+.galleryTitle {
+  margin-top: 3em;
+}
+
+.topRow{
+  margin-top: -50px;
+}
+
 /*.mySlides {
   height: 500px;
   margin: auto;

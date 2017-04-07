@@ -63,10 +63,12 @@ app.controller('galleryCtrl', ($scope, $state, $firebaseArray, $firebaseObject, 
    $scope.Admin = $firebaseArray(adminRef);
    const x = $("#click");
   //  console.log(x)
+
    var dBTN = $(".t2");
    var form = $("#wrap");
    dBTN.hide();
    form.hide();
+
    firebase.auth().signInAnonymously().then(function() {
      firebase.auth().onAuthStateChanged(function(user) {
        $scope.Admin = $firebaseArray(adminRef);

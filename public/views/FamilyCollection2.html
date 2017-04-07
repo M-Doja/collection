@@ -1,7 +1,7 @@
 <div ng-controller="galleryCtrl" class="container-fluid">
-
+<h1 class="text-center galleryTitle ab">Family Gallery</h1>
   <div class="container-fluid">
-    <div class="row">
+    <div class="row topRow">
       <div ng-repeat="x in Admin">
         <!-- <input type="text" style="background:#000;outline:none;border:none"name=""  value="{{x.coin}}"> -->
       </div>
@@ -11,8 +11,10 @@
 
         </div>
         <div class="controls text-center">
+          <!-- <a href="#">Travel</a> -->
           <a class="arrow prev" href="" ng-click="showPrev()"><i class="fa fa-angle-left" style="font-size:70px"></i></a>
           <a class="arrow next" href="" ng-click="showNext()"><i class="fa fa-angle-right" style="font-size:70px"></i></a>
+          <!-- <a href="#">Urban</a> -->
         </div>
         <div class=" text-center" ng-repeat="photo in photos">
           <!-- enumerate all photos -->
@@ -51,6 +53,3 @@
   </div>
 
 </div> <!-- End controller -->
-<script>
-  $(window).keyup(function(e){var key = e.which;if(key == 13 || key == 39){$('.next').click();return false;}else if(key == 37) { $('.prev').click();return false;}});
-</script>
