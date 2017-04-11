@@ -40,21 +40,47 @@ body {
 .bigText {
   font-size: 40px;
 }
-
+/*.color,*/
 #logoImg {
   background:rgba(255,255,255,0.1);
   border-radius:100%;
   border:solid 1.3em #fff;
   margin-top:2em;
   margin-bottom: 2em;
+
 }
-#logoImg:hover {
-  background:rgba(255,255,255,0.9);
+
+.color {
+  animation: color-me-in 12s infinite;
+  -webkit-animation: color-me-in 12s infinite;
+  -o-animation: color-me-in 12s infinite;
+  -moz-animation: color-me-in 12s infinite;
+  /*height: 00px;*/
+  /*width:300px;*/
+  border-radius:100%;
+}
+
+@keyframes color-me-in {
+  0% {
+    background: orange;
+  }
+  25% {
+    background: blue;
+  }
+  50% {
+    background: red;
+  }
+  75% {
+    background: white;
+  }
+  100% {
+    background: #333;
+  }
 }
 
 .homeText {
   color:#ccc;
-  margin-top:4em;
+  margin-top: .75em;
   text-align:center;
   font-family:arial Black;
 

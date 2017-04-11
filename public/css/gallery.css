@@ -34,6 +34,22 @@
   text-align: center;
 }
 
+.card-holder {
+  
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 1em;
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 20px;
+  padding-bottom: 50px;
+}
+.card img {
+  border: #000 solid 2px;
+  border-radius: 5px;
+}
 .slide {
   max-height: 700px;
   max-width: 700px;
