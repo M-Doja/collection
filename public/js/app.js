@@ -68,6 +68,9 @@ app.controller('galleryCtrl', ($scope, $state, $firebaseArray, $firebaseObject, 
    var form = $("#wrap");
    dBTN.hide();
    form.hide();
+  //  document.getElementById("logoImg").addEventListener('mouseover', function(){
+  //
+  //  })
 
    firebase.auth().signInAnonymously().then(function() {
      firebase.auth().onAuthStateChanged(function(user) {

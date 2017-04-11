@@ -16,7 +16,19 @@ body {
   font-family: arial black;
 }
 
+.bigText {
+  font-size: 40px;
+}
 
+#logoImg {
+  background:rgba(255,255,255,0.1);
+  border-radius:100%;
+  border:solid 1.3em #fff;
+  margin-top:2em;
+}
+#logoImg:hover {
+  background:rgba(255,255,255,0.9);
+}
 
 .homeText {
   color:#ccc;
@@ -72,7 +84,7 @@ input[type=checkbox] {
 */
 .par {
   text-align: center;
-  font-size: 14px;
+  font-size: 1.5em;
 }
 
 .par a {
