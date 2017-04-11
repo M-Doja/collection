@@ -57,52 +57,23 @@
   padding-left: 50px;
   padding-right: 50px;
   text-decoration: none;
-  /*display: inline-block;*/
-  /*margin-top: 100px;*/
 }
+
 .parent-wrapper{
   margin-top:3em;
 }
 
 .galleryTitle {
-  margin-top: 3em;
+  margin-top: .25em;
 }
 
-.topRow{
+.topRow {
   margin-top: -50px;
 }
 
-/*.mySlides {
-  height: 500px;
-  margin: auto;
-}
-.wrapper .list {
-  list-style: none;
-  height: 480px;
-  margin-left: 5.6rem;
-  overflow-y: auto;
-}
-.wrapper img {
-  width: 140px;
-  margin-bottom: 1rem;
-  cursor: pointer;
-  display: block;
-  border: 2px solid #fff;
-}
-.wrapper img:hover {
-  box-shadow: 0px 1px 4px #444;
-  transition: all .2s ease-in-out;
-  border-color: #fff;
-}
-.wrapper img:active {
-  opacity: .74;
-  box-shadow: 0px 1px 8px #666;
-}*/
-
-
- li {
-    list-style:none;
-    display:inline-block;
+li {
+  list-style:none;
+  display:inline-block;
 }
 
 ul{
@@ -112,13 +83,6 @@ ul{
     white-space:nowrap;
 }
 
-/*.thumb {
-  margin: 3px auto 25px;
-  max-width: 85px;
-  max-height: 85px;
-  border: 2px #fff solid;
-  object-fit: cover;
-}*/
 .fill {
     display: flex;
     justify-content: center;
@@ -135,7 +99,6 @@ ul{
   height: 20%;
 }
 
-
 .imG {
   max-height: 600px;
   height: auto;
@@ -144,6 +107,7 @@ ul{
 .btnPic {
   padding: 5px 5px 10px 5px;
 }
+
 .row3 {
     margin: 10em auto 3em;
     max-width:700px;
@@ -152,6 +116,7 @@ ul{
     overflow-x: hidden;
     border: 1px solid silver;
 }
+
 @media (max-width:992px){
   .row3 {
     margin: 4em auto 3em;
