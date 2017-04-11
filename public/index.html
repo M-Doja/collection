@@ -9,36 +9,50 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/gallery.css">
   </head>
-  <body class="container-fluid">
-    <div class="text-center">
+  <body class="container-fluid ">
+    <div class="page-wrap">
+      <div class="text-center">
 
-      <!-- Fixed navbar -->
-      <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav">
-              <li class="par"><a href="#" class="text-center ab"data-toggle="collapse" data-target="#navbar">Home</a></li>
-              <li class="par"><a ui-sref="Gallery" class="text-center ab"data-toggle="collapse" data-target="#navbar">Gallery</a></li>
-              <li class="par"><a ui-sref="Contact"  data-target="#navbar"  class="text-center ab">Contact</a></li>
-            </ul>
-          </div>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav">
+                <li class="par"><a href="#" class="text-center ab"data-toggle="collapse" data-target="#navbar">Home</a></li>
+                <li class="par"><a ui-sref="Gallery" class="text-center ab"data-toggle="collapse" data-target="#navbar">Gallery</a></li>
+                <li class="par"><a ui-sref="Contact"  data-target="#navbar"  class="text-center ab">Contact</a></li>
+              </ul>
+            </div>
 
-          <!--/.nav-collapse -->
-        </div>
-      </nav>
+            <!--/.nav-collapse -->
+          </div>
+        </nav>
+      </div>
+
+
+      <ui-view></ui-view>
+
     </div>
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Developed by Dev Doja.</span>
+      </div>
+    </footer>
+    <!-- <footer class="footer navbar-inverse site-footer" style="cursor:">
+      <div class="container">
+      <p class="text-center" style="color:#777;">
+        Developed by Dev Doja <a style="color:#777;" id="click" data-toggle="collapse" data-target="#demo"><i class="fa fa-copyright" aria-hidden="true"></i></a> 2017
+      </p>
 
-
-    <ui-view></ui-view>
-
+    </div></footer> -->
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
