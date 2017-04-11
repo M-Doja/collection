@@ -2,6 +2,7 @@
 const cfg = require('./config.js');
 const express = require('express');
 const app = express();
+var port = process.env.PORT || 3000;
 const router = express.Router();
 const bodyParser = require('body-parser');
 
@@ -22,7 +23,6 @@ app.get('/', (req, res) => {
 //       pass: cfg.fdsMailAccountSenderPassword
 // 		}
 // 	});
-//
 // 	var mailOptions = {
 // 		from:'LisanaPhoto <LisanaPhoto@gmail.com>',
 // 		to:'dojadeveloper@gmail.com',
@@ -30,7 +30,6 @@ app.get('/', (req, res) => {
 // 		text: 'You have a submission with following details.... Name:'+req.body.name+ 'Email:' +req.body.email+ 'Message' +req.body.message,
 // 		html:'<p>You have a submission with following details.... </p><ul><li>Name:' +req.body.name+'</li><li>Email:'+req.body.email+'</li><li>Message:'+req.body.message+' </li></ul>'
 // 	};
-//
 // 	transporter.sendMail(mailOptions, function(error, info){
 // 		if(error){
 // 			console.log(error);
@@ -42,6 +41,6 @@ app.get('/', (req, res) => {
 // 	})
 // });
 
-app.listen(3000,function(){
+app.listen(port, function(){
   console.log('Listening on port 3000');
 })
